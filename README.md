@@ -28,14 +28,6 @@
 3. Sistem redirect ke WhatsApp dengan format siap kirim.
 4. Admin memverifikasi pesanan dan memprosesnya di POS offline.
 
-## 🗂️ Struktur Folder
-```
-/resources/views/warung-online/    --> UI katalog online
-/routes/web.php                     --> Routing ke halaman warung online
-/app/Http/Controllers/OnlineController.php  --> Logic tampilan katalog
-/public/qrcode/                     --> Folder QR Code link katalog
-```
-
 ## 📎 Catatan Pengembangan
 - Tidak menggunakan integrasi payment gateway.
 - Dapat digunakan di browser HP pelanggan.
