@@ -1,0 +1,8 @@
+1. membuat skema fetch data product -- done
+2. membuat template konfirmasi pesanan ke whatsapp -- done
+3. mengecek mekanisme keranjang berjalan dengan baik
+4. memperbaiki backdrop ketika modal ditampilkan
+5. membuat error handling dengan baik ketika produk tidak bisa dimuat, dan skema error lainnya
+6. mencoba deploy dengan vercel ataupun yang lain
+7. memperbaiki tampilan navbar agar lebih rapi
+8. 
