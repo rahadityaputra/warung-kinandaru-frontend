@@ -8,15 +8,14 @@ import ProductCartCard from "@/components/ProductCartCard";
 import { TrashIcon } from "lucide-react";
 import dynamic from "next/dynamic";
 import ConfirmationModal from "@/components/ConfirmationModal";
-import ErrorMessage from "@/components/ErrorMessage";
 
-type props = {
-  onDeleteSelected: (itemSelected: number[]) => void,
-}
+// type props = {
+//   onDeleteSelected: (itemSelected: number[]) => void,
+// }
 
 const Modal = dynamic(() => import('@/components/Modal'))
 
-const CartPage = ({ onDeleteSelected }: props) => {
+const CartPage = ({ onDeleteSelected }: any) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const total = cartItems?.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
