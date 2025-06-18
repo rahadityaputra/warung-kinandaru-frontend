@@ -14,7 +14,6 @@ type props = {
   onDeleteSelected: (itemSelected: number[]) => void,
 }
 
-
 const Modal = dynamic(() => import('@/components/Modal'))
 
 const CartPage = ({ onDeleteSelected }: props) => {
@@ -22,7 +21,7 @@ const CartPage = ({ onDeleteSelected }: props) => {
   const total = cartItems?.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
   const [isConfirmationOrderModalOpen, setIsConfirmationOrderModalOpen] = useState(false);
-  const ownerPhoneNumber = '6281317646940';
+  const ownerPhoneNumber = '6282226138704';
 
 
   useEffect(() => {

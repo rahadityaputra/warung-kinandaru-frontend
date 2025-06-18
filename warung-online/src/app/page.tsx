@@ -2,29 +2,19 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { ShoppingCart } from 'lucide-react';
-import { dummyProducts } from '@/data/products';
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 import Product from '@/types/Product';
 import ProductList from '@/components/ProductList';
 import LoadingProduct from '@/components/LoadingProduct';
 import ErrorMessage from '@/components/ErrorMessage';
-
-const getProducts = async () => {
-  try {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    throw new Error();
-  } catch (error) {
-    throw new Error("Produk tidak dapat dimuat ! ");
-  }
-}
-
+import EmptyProductState from '@/components/EmpryProductState';
 
 export default function HomePage() {
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(false);
   const [fetchError, setFetchError] = useState<string | null>(null);
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<any[]>([]);
   const productPerPage = 10;
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([])
 
@@ -35,8 +25,10 @@ export default function HomePage() {
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const results = await getProducts();
-      setProducts(results);
+      const fetchResult = await fetch("https://kinandaru-backend.vercel.app/api/products");
+      const result = await fetchResult.json();
+      const product = result.data
+      setProducts(product);
     } catch (error: any) {
       setFetchError(error.message)
     } finally {
@@ -80,8 +72,10 @@ export default function HomePage() {
       <Navbar onSearch={handleSearch} placeholderOnInputSearch={"Cari Kebutuhanmu"} />
       {loading ? (
         <LoadingProduct />
-      ) : !fetchError ? (<ProductList products={search ? filteredProducts : featuredProducts} onLoadMore={handleLoadMore} showLoadMoreButton={shouldShowLoadMoreButton} />
-      ) :
+      ) : !fetchError ? products.length == 0 ?
+        <EmptyProductState /> :
+        (<ProductList products={search ? filteredProducts : featuredProducts} onLoadMore={handleLoadMore} showLoadMoreButton={shouldShowLoadMoreButton} />
+        ) :
         <ErrorMessage message={fetchError} showRetryButton={true} onRetry={retryFetchProducts} />
       }
 

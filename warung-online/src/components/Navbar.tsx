@@ -1,5 +1,6 @@
 import { Search } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Category from '@/types/Category';
 
 type NavbarProps = {
   isSearchInputAvailable?: boolean,
@@ -25,6 +26,25 @@ const categories = [
 
 const Navbar = ({ isSearchInputAvailable = true, isCategoryBoxAvailable = true, onSearch, placeholderOnInputSearch }: NavbarProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [categories, setCategories] = useState<Category[]>([])
+
+
+  const fetchCategories = async () => {
+    try {
+      const fetchResult = await fetch("https://kinandaru-backend.vercel.app/api/categories");
+      const result = await fetchResult.json();
+      const categories = result.data
+      setCategories(categories);
+    } catch (error: any) {
+      console.log(error);
+    } finally {
+    }
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
   const handleInputSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const text = e.target.value;
     if (onSearch) {
@@ -45,6 +65,8 @@ const Navbar = ({ isSearchInputAvailable = true, isCategoryBoxAvailable = true, 
             onMouseEnter={() => setIsDropdownOpen(true)} // Tampilkan dropdown saat mouse masuk
             onMouseLeave={() => setIsDropdownOpen(false)} // Sembunyikan dropdown saat mouse keluar
           >
+
+            {categories.length > 0 && (
             <button
               className="flex items-center text-gray-700 hover:text-blue-600 font-semibold focus:outline-none"
               aria-haspopup="true"
@@ -64,7 +86,7 @@ const Navbar = ({ isSearchInputAvailable = true, isCategoryBoxAvailable = true, 
                   clipRule="evenodd"
                 />
               </svg>
-            </button>
+            </button>)}
 
             {/* Isi Dropdown */}
             {isDropdownOpen && (
@@ -78,12 +100,12 @@ const Navbar = ({ isSearchInputAvailable = true, isCategoryBoxAvailable = true, 
               >
                 {categories.map((category) => (
                   <a
-                    key={category}
-                    href={`/kategori/${encodeURIComponent(category.toLowerCase().replace(/\s+/g, '-'))}`} // Contoh URL kategori
+                    key={category.id}
+                    href={`/kategori/${encodeURIComponent(category.name.toLowerCase().replace(/\s+/g, '-'))}`} // Contoh URL kategori
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600"
                     role="menuitem"
                   >
-                    {category}
+                    {category.name}
                   </a>
                 ))}
               </div>

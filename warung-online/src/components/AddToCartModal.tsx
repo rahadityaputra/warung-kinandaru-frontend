@@ -3,7 +3,7 @@ import Product from "../types/Product";
 import { CartItem } from "../types/CartItem";
 
 type props = {
-  product: Product,
+  product: any,
   onClose: () => void,
   onAddToCart: (product: CartItem, quantity: number) => void
 }
@@ -25,8 +25,9 @@ export default function AddToCartModal({ product, onClose, onAddToCart }: props)
   };
 
   const handleAdd = () => {
-    const { id, name, price, image, stock } = product;
-    const newProductToCart: CartItem = { id, name, price, image, quantity, stock };
+    const { id, name, imageUrl, stock } = product;
+    const price = product.priceHistory[0].price;
+    const newProductToCart: any = { id, name, price, imageUrl, quantity, stock };
     onAddToCart(newProductToCart, quantity);
     onClose();
   };
@@ -34,12 +35,12 @@ export default function AddToCartModal({ product, onClose, onAddToCart }: props)
   return (
     <div className="bg-white rounded-2xl shadow-xl p-6 w-full max-w md:max-w-md lg:max-w-lg">
       <img
-        src={product.image}
+        src={product.imageUrl}
         alt={product.name}
         className="w-full h-48 sm:h-64 object-cover rounded-lg mb-4"
       />
 
-      <p className="text-xl md:text-2xl font-bold text-green-600 mb-4">Rp{product.price.toLocaleString()}</p>
+      <p className="text-xl md:text-2xl font-bold text-green-600 mb-4">Rp{product.priceHistory[0].price.toLocaleString()}</p>
       <div className="flex items-center justify-center gap-4 mb-6">
         <button
           disabled={quantity <= 1}

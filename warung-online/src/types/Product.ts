@@ -1,4 +1,3 @@
-import { JSX } from "react";
 
 type Product = {
   id: number;

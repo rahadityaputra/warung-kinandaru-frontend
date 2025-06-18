@@ -18,13 +18,13 @@ function ProductList({ products, onLoadMore, showLoadMoreButton }: { products: P
     setIsAddToCartModalOpen(true);
     setSelectedProduct(product);
   }
-  const handleAddToCartClick = (product: CartItem) => {
+  const handleAddToCartClick = (product: any) => {
     addProductToCartDatabase(product);
     setIsSuccessModalOpen(true);
   };
 
-  const addProductToCartDatabase = (newProduct: CartItem) => {
-    const cartData = localStorageHelper.get<CartItem[]>("Cart_item_data_warung_kinandaru") || [];
+  const addProductToCartDatabase = (newProduct: any) => {
+    const cartData = localStorageHelper.get<any[]>("Cart_item_data_warung_kinandaru") || [];
     const existingIndex = cartData.findIndex(item => item.id === newProduct.id);
 
     if (existingIndex !== -1) {
@@ -36,15 +36,12 @@ function ProductList({ products, onLoadMore, showLoadMoreButton }: { products: P
         ...existingItem,
         quantity: maxQuantity
       };
-
-      localStorageHelper.set<CartItem[]>("Cart_item_data_warung_kinandaru", updatedCart)
-
+      localStorageHelper.set<any[]>("Cart_item_data_warung_kinandaru", updatedCart)
     } else {
       const quantity = Math.min(newProduct.quantity, newProduct.stock);
       newProduct.quantity = quantity;
       cartData.push(newProduct)
-      localStorageHelper.set<CartItem[]>("Cart_item_data_warung_kinandaru", cartData)
-
+      localStorageHelper.set<any[]>("Cart_item_data_warung_kinandaru", cartData)
     }
   }
 
