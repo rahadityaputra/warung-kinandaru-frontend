@@ -8,16 +8,14 @@ type ModalProps = {
 const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
   if (!isOpen) return null;
   return (
-    <div
-      className="fixed inset-0 flex items-center justify-center z-50 p-4"
-    >
-      {/* untuk modalnya */}
-      <div className="flex flex-col bg-white w-[500px] justify-between items-start mb-4 p-5 rounded-md relative"> {/* Added 'relative' here */}
-        <div className="flex w-full items-center mb-4"> {/* Changed justify-around to justify-between, added items-center, and mb-4 */}
+    <div className="inset-0 fixed z-100 flex justify-center items-center">
+      <div className="fixed inset-0 bg-black opacity-50"></div>
+      <div className="flex flex-col bg-white w-[500px]  justify-between items-start mb-4 p-5 rounded-sm relative shadow-2xl">
+        <div className="flex w-full items-center mb-4">
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-red-600 text-3xl leading-none absolute top-2 right-2" // Absolute positioning
-            aria-label="Close" // Added for accessibility
+            className="text-gray-500 hover:text-red-600 text-3xl leading-none absolute top-2 right-2"
+            aria-label="Close"
           >
             &times;
           </button>
@@ -27,7 +25,7 @@ const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
           {children}
         </div>
       </div>
-    </div >
+    </div>
   );
 };
 

@@ -9,31 +9,47 @@ import ProductList from '@/components/ProductList';
 import LoadingProduct from '@/components/LoadingProduct';
 import ErrorMessage from '@/components/ErrorMessage';
 import EmptyProductState from '@/components/EmpryProductState';
+import dynamic from 'next/dynamic';
+import { dummyProducts } from '@/data/products';
 
+const Footer = dynamic(() => import("@/components/Footer"));
 export default function HomePage() {
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(false);
   const [fetchError, setFetchError] = useState<string | null>(null);
-  const [products, setProducts] = useState<any[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [isEmptyProduts, setIsEmptyProducts] = useState(false);
   const productPerPage = 10;
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([])
 
-  const filteredProducts = useMemo(() => products?.filter(product =>
-    product.name.toLowerCase().includes(search.toLowerCase())
-  ), [products, search]);
+  const filteredProducts = useMemo(() => {
+    setIsEmptyProducts(false);
+    const searchResults = products?.filter(product => {
+      return product.name.toLowerCase().includes(search.toLowerCase())
+    }
+    )
+    if (searchResults.length == 0) {
+      setIsEmptyProducts(true);
+    }
+
+    return searchResults;
+  }, [products, search]);
 
   const fetchProducts = async () => {
     setLoading(true);
-    try {
-      const fetchResult = await fetch("https://kinandaru-backend.vercel.app/api/products");
-      const result = await fetchResult.json();
-      const product = result.data
-      setProducts(product);
-    } catch (error: any) {
-      setFetchError(error.message)
-    } finally {
-      setLoading(false);
-    }
+    setTimeout(() => {
+      try {
+        if (dummyProducts.length == 0) {
+          setIsEmptyProducts(true)
+        } else {
+          setProducts(dummyProducts);
+        }
+      } catch (error: any) {
+        setFetchError(error.message)
+      } finally {
+        setLoading(false);
+      }
+    }, 1500)
   };
 
   useEffect(() => {
@@ -46,9 +62,9 @@ export default function HomePage() {
   }, [products, productPerPage]);
 
   const retryFetchProducts = () => {
-    setProducts([]); // Kosongkan produk
-    setFetchError(null); // Hapus pesan error
-    // Panggil kembali fungsi fetch utama
+    setProducts([]);
+    setFetchError(null);
+
     fetchProducts();
   };
   const handleSearch = (text: string) => {
@@ -72,13 +88,14 @@ export default function HomePage() {
       <Navbar onSearch={handleSearch} placeholderOnInputSearch={"Cari Kebutuhanmu"} />
       {loading ? (
         <LoadingProduct />
-      ) : !fetchError ? products.length == 0 ?
+      ) : !fetchError ? isEmptyProduts ?
         <EmptyProductState /> :
         (<ProductList products={search ? filteredProducts : featuredProducts} onLoadMore={handleLoadMore} showLoadMoreButton={shouldShowLoadMoreButton} />
         ) :
         <ErrorMessage message={fetchError} showRetryButton={true} onRetry={retryFetchProducts} />
       }
 
+      <Footer />
       <div className="fixed bottom-6 right-6">
         <Link href={'/cart'}>
           <button className="bg-purple-600 p-4 rounded-full shadow-xl text-white cursor-pointer">

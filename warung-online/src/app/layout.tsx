@@ -25,7 +25,6 @@ export const metadata: Metadata = {
 };
 
 
-const Footer = dynamic(() => import("@/components/Footer"));
 
 export default function RootLayout({
   children,
@@ -38,7 +37,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${quicsand.variable} antialiased`}
       >
         {children}
-        <Footer />
       </body>
     </html>
   );

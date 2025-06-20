@@ -9,10 +9,6 @@ import { TrashIcon } from "lucide-react";
 import dynamic from "next/dynamic";
 import ConfirmationModal from "@/components/ConfirmationModal";
 
-// type props = {
-//   onDeleteSelected: (itemSelected: number[]) => void,
-// }
-
 const Modal = dynamic(() => import('@/components/Modal'))
 
 const CartPage = ({ onDeleteSelected }: any) => {

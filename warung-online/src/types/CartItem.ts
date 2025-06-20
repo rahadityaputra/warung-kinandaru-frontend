@@ -5,7 +5,7 @@ export type CartItem = {
   stock: number,
   quantity: number,
   price: number,
-  image: string
+  imageUrl: string
 };
 
 

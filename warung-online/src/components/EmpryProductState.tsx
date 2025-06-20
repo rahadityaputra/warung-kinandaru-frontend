@@ -21,10 +21,9 @@ const EmptyProductState: React.FC<EmptyProductStateProps> = ({
       className={`
         flex flex-col items-center justify-center p-8 text-center
         border border-dashed border-gray-300 rounded-lg
-        text-gray-500 bg-gray-50
+        text-gray-500 bg-gray-50 min-h-screen
         ${className}
       `}
-      style={{ minHeight: '200px' }} // Contoh gaya inline minimal
     >
       <div className="text-6xl mb-4" role="img" aria-label="Empty Box">
         {icon}

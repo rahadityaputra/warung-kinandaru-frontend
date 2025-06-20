@@ -14,9 +14,11 @@ function ProductList({ products, onLoadMore, showLoadMoreButton }: { products: P
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
   const [isAddToCartModalOpen, setIsAddToCartModalOpen] = useState(false);
+
   const handleAddToCartModal = (product: Product) => {
     setIsAddToCartModalOpen(true);
     setSelectedProduct(product);
+    document.body.classList.add("overflow-hidden")
   }
   const handleAddToCartClick = (product: any) => {
     addProductToCartDatabase(product);
@@ -47,7 +49,7 @@ function ProductList({ products, onLoadMore, showLoadMoreButton }: { products: P
 
   return (
     <div>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 p-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 p-6 min-h-screen">
         {products.map((product) => (
           <ProductCard product={product} key={product.id} onOpenAddToCartModal={handleAddToCartModal} />
         ))}
@@ -65,8 +67,10 @@ function ProductList({ products, onLoadMore, showLoadMoreButton }: { products: P
 
         <Modal
           isOpen={isAddToCartModalOpen}
-          onClose={() => setIsAddToCartModalOpen(false)}
-          title={selectedProduct?.name}
+          onClose={() => {
+            document.body.classList.remove("overflow-hidden")
+            setIsAddToCartModalOpen(false)
+          }}
         >
           {selectedProduct && <AddToCartModal product={selectedProduct} onAddToCart={handleAddToCartClick} onClose={() => { setIsAddToCartModalOpen(false) }} />}
         </Modal>

@@ -9,24 +9,10 @@ type NavbarProps = {
   placeholderOnInputSearch?: string
 }
 
-const categories = [
-  'Sembako & Bahan Pokok',
-  'Minuman & Aneka Jus',
-  'Snack & Cemilan',
-  'Bumbu Dapur & Rempah',
-  'Produk Segar (Sayur & Buah)',
-  'Daging & Seafood',
-  'Produk Olahan Susu',
-  'Kebutuhan Rumah Tangga',
-  'Perlengkapan Mandi & Cuci',
-  'Produk Bayi & Anak',
-  'Obat-obatan Ringan & P3K',
-  'Lain-lain',
-];
-
 const Navbar = ({ isSearchInputAvailable = true, isCategoryBoxAvailable = true, onSearch, placeholderOnInputSearch }: NavbarProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [categories, setCategories] = useState<Category[]>([])
+  const [isShowSearchInputForMobile, setIsShowSearchInputMobile] = useState(false)
 
 
   const fetchCategories = async () => {
@@ -52,10 +38,39 @@ const Navbar = ({ isSearchInputAvailable = true, isCategoryBoxAvailable = true, 
     }
   }
 
+  const handleClickSearchIcon = () => {
+    setIsShowSearchInputMobile((prev) => {
+      return !prev;
+    })
+  }
+
+  if (isShowSearchInputForMobile) {
+    return (
+
+      <nav className="sticky z-20 bg-white top-0 p-4 flex flex-row justify-between sm:items-center sm:justify-between gap-3 shadow-md">
+
+        <div className="flex gap-2 w-full sm:w-80 sm:mx-0">
+          <input
+            type="text"
+            placeholder={placeholderOnInputSearch}
+            onChange={handleInputSearch}
+            className="rounded-sm pl-10 pr-4 w-full text-sm text-gray-800 bg-white border border-green-400 focus:outline-none focus:ring-2 focus:ring-green-300 focus:border-transparent transition duration-200 shadow-sm"
+          />
+          <button
+            onClick={() => { setIsShowSearchInputMobile(false) }}
+            className="text-gray-500 hover:text-red-600 text-3xl leading-none"
+            aria-label="Close"
+          >
+            &times;
+          </button>
+        </div>
+      </nav >)
+  }
+
   return (
-    <nav className="sticky z-20 bg-white top-0 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 shadow-md">
-      <h1 className={`font-quicksand text-green-700 text-2xl font-semibold text-center sm:text-left tracking-wide`}>
-        Warung Kinandaru
+    <nav className="sticky z-20 bg-white top-0 p-4 flex flex-row justify-between sm:items-center sm:justify-between gap-3 shadow-md">
+      <h1 className={`font-quicksand text-green-700 text-2xl font-semibold sm:text-left tracking-wide`}>
+        Kinandaru
       </h1>
 
       <div className='flex gap-2 items-center'>
@@ -66,9 +81,8 @@ const Navbar = ({ isSearchInputAvailable = true, isCategoryBoxAvailable = true, 
             onMouseLeave={() => setIsDropdownOpen(false)} // Sembunyikan dropdown saat mouse keluar
           >
 
-            {categories.length > 0 && (
             <button
-              className="flex items-center text-gray-700 hover:text-blue-600 font-semibold focus:outline-none"
+              className="hidden md:flex items-center text-gray-700 hover:text-blue-600 focus:outline-none"
               aria-haspopup="true"
               aria-expanded={isDropdownOpen ? "true" : "false"}
             >
@@ -86,7 +100,7 @@ const Navbar = ({ isSearchInputAvailable = true, isCategoryBoxAvailable = true, 
                   clipRule="evenodd"
                 />
               </svg>
-            </button>)}
+            </button>
 
             {/* Isi Dropdown */}
             {isDropdownOpen && (
@@ -114,8 +128,17 @@ const Navbar = ({ isSearchInputAvailable = true, isCategoryBoxAvailable = true, 
 
 
         )}
+        <div className='md:hidden'>
+          <button className='flex justify-center items-center' onClick={handleClickSearchIcon}>
+            <Search
+              className="text-gray-500 pointer-events-none"
+              size={20}
+            />
+          </button>
+
+        </div>
         {isSearchInputAvailable && (
-          <div className="relative w-full sm:w-80 mx-auto sm:mx-0">
+          <div className="relative hidden md:block w-full sm:w-80 mx-auto sm:mx-0">
             <input
               type="text"
               placeholder={placeholderOnInputSearch}

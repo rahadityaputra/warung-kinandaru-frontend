@@ -3,7 +3,7 @@ import Product from "../types/Product";
 import { CartItem } from "../types/CartItem";
 
 type props = {
-  product: any,
+  product: Product,
   onClose: () => void,
   onAddToCart: (product: CartItem, quantity: number) => void
 }
@@ -33,13 +33,13 @@ export default function AddToCartModal({ product, onClose, onAddToCart }: props)
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-6 w-full max-w md:max-w-md lg:max-w-lg">
+    <div className="w-full max-w md:max-w-md lg:max-w-lg">
       <img
         src={product.imageUrl}
         alt={product.name}
         className="w-full h-48 sm:h-64 object-cover rounded-lg mb-4"
       />
-
+      <h1>{product.name}</h1>
       <p className="text-xl md:text-2xl font-bold text-green-600 mb-4">Rp{product.priceHistory[0].price.toLocaleString()}</p>
       <div className="flex items-center justify-center gap-4 mb-6">
         <button
