@@ -11,11 +11,7 @@ const dummyProducts: Product[] = [
       "name": "Bahan Pokok"
     },
     "stock": 25,
-    "priceHistory": [
-      { "id": 1, "price": 62000 },
-      { "id": 2, "price": 63500 },
-      { "id": 3, "price": 65000 }
-    ]
+    "currentPrice": 65000
   },
   {
     "id": 2,
@@ -27,10 +23,7 @@ const dummyProducts: Product[] = [
       "name": "Bahan Pokok"
     },
     "stock": 18,
-    "priceHistory": [
-      { "id": 4, "price": 19500 },
-      { "id": 5, "price": 20000 }
-    ]
+    "currentPrice": 20000
   },
   {
     "id": 3,
@@ -42,10 +35,7 @@ const dummyProducts: Product[] = [
       "name": "Bahan Pokok"
     },
     "stock": 12,
-    "priceHistory": [
-      { "id": 6, "price": 34000 },
-      { "id": 7, "price": 35000 }
-    ]
+    "currentPrice": 35000
   },
   {
     "id": 4,
@@ -57,10 +47,7 @@ const dummyProducts: Product[] = [
       "name": "Bahan Pokok"
     },
     "stock": 30,
-    "priceHistory": [
-      { "id": 8, "price": 12500 },
-      { "id": 9, "price": 13000 }
-    ]
+    "currentPrice": 13000
   },
   {
     "id": 5,
@@ -72,10 +59,7 @@ const dummyProducts: Product[] = [
       "name": "Minuman Instan"
     },
     "stock": 20,
-    "priceHistory": [
-      { "id": 10, "price": 14500 },
-      { "id": 11, "price": 15000 }
-    ]
+    "currentPrice": 15000
   },
   {
     "id": 6,
@@ -87,10 +71,7 @@ const dummyProducts: Product[] = [
       "name": "Mi Instan"
     },
     "stock": 5,
-    "priceHistory": [
-      { "id": 12, "price": 108000 },
-      { "id": 13, "price": 110000 }
-    ]
+    "currentPrice": 110000
   },
   {
     "id": 7,
@@ -102,10 +83,7 @@ const dummyProducts: Product[] = [
       "name": "Bahan Pokok"
     },
     "stock": 40,
-    "priceHistory": [
-      { "id": 14, "price": 3800 },
-      { "id": 15, "price": 4000 }
-    ]
+    "currentPrice": 4000
   },
   {
     "id": 8,
@@ -117,10 +95,7 @@ const dummyProducts: Product[] = [
       "name": "Bumbu Dapur"
     },
     "stock": 15,
-    "priceHistory": [
-      { "id": 16, "price": 17500 },
-      { "id": 17, "price": 18000 }
-    ]
+    "currentPrice": 18000
   },
   {
     "id": 9,
@@ -132,10 +107,7 @@ const dummyProducts: Product[] = [
       "name": "Bumbu Dapur"
     },
     "stock": 22,
-    "priceHistory": [
-      { "id": 18, "price": 11500 },
-      { "id": 19, "price": 12000 }
-    ]
+    "currentPrice": 12000
   },
   {
     "id": 10,
@@ -147,10 +119,7 @@ const dummyProducts: Product[] = [
       "name": "Makanan Kaleng"
     },
     "stock": 10,
-    "priceHistory": [
-      { "id": 20, "price": 9500 },
-      { "id": 21, "price": 10000 }
-    ]
+    "currentPrice": 10000
   },
   {
     "id": 11,
@@ -162,10 +131,7 @@ const dummyProducts: Product[] = [
       "name": "Produk Susu"
     },
     "stock": 17,
-    "priceHistory": [
-      { "id": 22, "price": 13800 },
-      { "id": 23, "price": 14000 }
-    ]
+    "currentPrice": 14000
   },
   {
     "id": 12,
@@ -177,10 +143,7 @@ const dummyProducts: Product[] = [
       "name": "Minuman Kemasan"
     },
     "stock": 8,
-    "priceHistory": [
-      { "id": 24, "price": 39000 },
-      { "id": 25, "price": 40000 }
-    ]
+    "currentPrice": 40000
   },
   {
     "id": 13,
@@ -192,10 +155,7 @@ const dummyProducts: Product[] = [
       "name": "Makanan Ringan"
     },
     "stock": 25,
-    "priceHistory": [
-      { "id": 26, "price": 8500 },
-      { "id": 27, "price": 9000 }
-    ]
+    "currentPrice": 9000
   },
   {
     "id": 14,
@@ -207,10 +167,7 @@ const dummyProducts: Product[] = [
       "name": "Mi Instan"
     },
     "stock": 4,
-    "priceHistory": [
-      { "id": 28, "price": 112000 },
-      { "id": 29, "price": 115000 }
-    ]
+    "currentPrice": 115000
   },
   {
     "id": 15,
@@ -222,10 +179,7 @@ const dummyProducts: Product[] = [
       "name": "Perawatan Diri"
     },
     "stock": 28,
-    "priceHistory": [
-      { "id": 30, "price": 9800 },
-      { "id": 31, "price": 10000 }
-    ]
+    "currentPrice": 10000
   },
   {
     "id": 16,
@@ -237,10 +191,7 @@ const dummyProducts: Product[] = [
       "name": "Perawatan Diri"
     },
     "stock": 35,
-    "priceHistory": [
-      { "id": 32, "price": 4800 },
-      { "id": 33, "price": 5000 }
-    ]
+    "currentPrice": 5000
   },
   {
     "id": 17,
@@ -252,10 +203,7 @@ const dummyProducts: Product[] = [
       "name": "Perawatan Diri"
     },
     "stock": 15,
-    "priceHistory": [
-      { "id": 34, "price": 19000 },
-      { "id": 35, "price": 20000 }
-    ]
+    "currentPrice": 20000
   },
   {
     "id": 18,
@@ -267,10 +215,7 @@ const dummyProducts: Product[] = [
       "name": "Pembersih Rumah"
     },
     "stock": 10,
-    "priceHistory": [
-      { "id": 36, "price": 15500 },
-      { "id": 37, "price": 16000 }
-    ]
+    "currentPrice": 16000
   },
   {
     "id": 19,
@@ -282,10 +227,7 @@ const dummyProducts: Product[] = [
       "name": "Pembersih Rumah"
     },
     "stock": 18,
-    "priceHistory": [
-      { "id": 38, "price": 12500 },
-      { "id": 39, "price": 13000 }
-    ]
+    "currentPrice": 13000
   },
   {
     "id": 20,
@@ -297,10 +239,7 @@ const dummyProducts: Product[] = [
       "name": "Pembersih Rumah"
     },
     "stock": 14,
-    "priceHistory": [
-      { "id": 40, "price": 24000 },
-      { "id": 41, "price": 25000 }
-    ]
+    "currentPrice": 25000
   },
   {
     "id": 21,
@@ -312,10 +251,7 @@ const dummyProducts: Product[] = [
       "name": "Makanan Ringan"
     },
     "stock": 28,
-    "priceHistory": [
-      { "id": 42, "price": 7800 },
-      { "id": 43, "price": 8000 }
-    ]
+    "currentPrice": 8000
   },
   {
     "id": 22,
@@ -327,10 +263,7 @@ const dummyProducts: Product[] = [
       "name": "Roti & Pastry"
     },
     "stock": 8,
-    "priceHistory": [
-      { "id": 44, "price": 13500 },
-      { "id": 45, "price": 14000 }
-    ]
+    "currentPrice": 14000
   },
   {
     "id": 23,
@@ -342,10 +275,7 @@ const dummyProducts: Product[] = [
       "name": "Minuman Kemasan"
     },
     "stock": 30,
-    "priceHistory": [
-      { "id": 46, "price": 6800 },
-      { "id": 47, "price": 7000 }
-    ]
+    "currentPrice": 7000
   },
   {
     "id": 24,
@@ -357,10 +287,7 @@ const dummyProducts: Product[] = [
       "name": "Produk Susu"
     },
     "stock": 20,
-    "priceHistory": [
-      { "id": 48, "price": 5800 },
-      { "id": 49, "price": 6000 }
-    ]
+    "currentPrice": 6000
   },
   {
     "id": 25,
@@ -372,10 +299,7 @@ const dummyProducts: Product[] = [
       "name": "Makanan Ringan"
     },
     "stock": 25,
-    "priceHistory": [
-      { "id": 50, "price": 7200 },
-      { "id": 51, "price": 7500 }
-    ]
+    "currentPrice": 7500
   },
   {
     "id": 26,
@@ -387,10 +311,7 @@ const dummyProducts: Product[] = [
       "name": "Bahan Pokok"
     },
     "stock": 10,
-    "priceHistory": [
-      { "id": 52, "price": 27500 },
-      { "id": 53, "price": 28000 }
-    ]
+    "currentPrice": 28000
   },
   {
     "id": 27,
@@ -402,10 +323,7 @@ const dummyProducts: Product[] = [
       "name": "Sayuran Segar"
     },
     "stock": 15,
-    "priceHistory": [
-      { "id": 54, "price": 7500 },
-      { "id": 55, "price": 8000 }
-    ]
+    "currentPrice": 8000
   },
   {
     "id": 28,
@@ -417,10 +335,7 @@ const dummyProducts: Product[] = [
       "name": "Sayuran Segar"
     },
     "stock": 15,
-    "priceHistory": [
-      { "id": 56, "price": 8500 },
-      { "id": 57, "price": 9000 }
-    ]
+    "currentPrice": 9000
   },
   {
     "id": 29,
@@ -432,10 +347,7 @@ const dummyProducts: Product[] = [
       "name": "Sayuran Segar"
     },
     "stock": 10,
-    "priceHistory": [
-      { "id": 58, "price": 14000 },
-      { "id": 59, "price": 15000 }
-    ]
+    "currentPrice": 15000
   },
   {
     "id": 30,
@@ -447,10 +359,7 @@ const dummyProducts: Product[] = [
       "name": "Sayuran Segar"
     },
     "stock": 12,
-    "priceHistory": [
-      { "id": 60, "price": 9500 },
-      { "id": 61, "price": 10000 }
-    ]
+    "currentPrice": 10000
   },
   {
     "id": 31,
@@ -462,10 +371,7 @@ const dummyProducts: Product[] = [
       "name": "Sayuran Segar"
     },
     "stock": 20,
-    "priceHistory": [
-      { "id": 62, "price": 4500 },
-      { "id": 63, "price": 5000 }
-    ]
+    "currentPrice": 5000
   },
   {
     "id": 32,
@@ -477,10 +383,7 @@ const dummyProducts: Product[] = [
       "name": "Sayuran Segar"
     },
     "stock": 18,
-    "priceHistory": [
-      { "id": 64, "price": 6800 },
-      { "id": 65, "price": 7000 }
-    ]
+    "currentPrice": 7000
   },
   {
     "id": 33,
@@ -492,10 +395,7 @@ const dummyProducts: Product[] = [
       "name": "Perawatan Diri"
     },
     "stock": 10,
-    "priceHistory": [
-      { "id": 66, "price": 24000 },
-      { "id": 67, "price": 25000 }
-    ]
+    "currentPrice": 25000
   },
   {
     "id": 34,
@@ -507,10 +407,7 @@ const dummyProducts: Product[] = [
       "name": "Pembersih Rumah"
     },
     "stock": 50,
-    "priceHistory": [
-      { "id": 68, "price": 2800 },
-      { "id": 69, "price": 3000 }
-    ]
+    "currentPrice": 3000
   },
   {
     "id": 35,
@@ -522,10 +419,7 @@ const dummyProducts: Product[] = [
       "name": "Perawatan Diri"
     },
     "stock": 12,
-    "priceHistory": [
-      { "id": 70, "price": 17500 },
-      { "id": 71, "price": 18000 }
-    ]
+    "currentPrice": 18000
   },
   {
     "id": 36,
@@ -537,10 +431,7 @@ const dummyProducts: Product[] = [
       "name": "Mi Instan"
     },
     "stock": 30,
-    "priceHistory": [
-      { "id": 72, "price": 4800 },
-      { "id": 73, "price": 5000 }
-    ]
+    "currentPrice": 5000
   },
   {
     "id": 37,
@@ -552,10 +443,7 @@ const dummyProducts: Product[] = [
       "name": "Minuman Kemasan"
     },
     "stock": 15,
-    "priceHistory": [
-      { "id": 74, "price": 12500 },
-      { "id": 75, "price": 13000 }
-    ]
+    "currentPrice": 13000
   },
   {
     "id": 38,
@@ -567,10 +455,7 @@ const dummyProducts: Product[] = [
       "name": "Minuman Kemasan"
     },
     "stock": 7,
-    "priceHistory": [
-      { "id": 76, "price": 44000 },
-      { "id": 77, "price": 45000 }
-    ]
+    "currentPrice": 45000
   },
   {
     "id": 39,
@@ -582,10 +467,7 @@ const dummyProducts: Product[] = [
       "name": "Bumbu Dapur"
     },
     "stock": 20,
-    "priceHistory": [
-      { "id": 78, "price": 7800 },
-      { "id": 79, "price": 8000 }
-    ]
+    "currentPrice": 8000
   },
   {
     "id": 40,
@@ -597,10 +479,7 @@ const dummyProducts: Product[] = [
       "name": "Bumbu Dapur"
     },
     "stock": 18,
-    "priceHistory": [
-      { "id": 80, "price": 8800 },
-      { "id": 81, "price": 9000 }
-    ]
+    "currentPrice": 9000
   },
   {
     "id": 41,
@@ -612,10 +491,7 @@ const dummyProducts: Product[] = [
       "name": "Produk Susu"
     },
     "stock": 15,
-    "priceHistory": [
-      { "id": 82, "price": 13000 },
-      { "id": 83, "price": 13500 }
-    ]
+    "currentPrice": 13500
   },
   {
     "id": 42,
@@ -627,10 +503,7 @@ const dummyProducts: Product[] = [
       "name": "Makanan Ringan"
     },
     "stock": 22,
-    "priceHistory": [
-      { "id": 84, "price": 5800 },
-      { "id": 85, "price": 6000 }
-    ]
+    "currentPrice": 6000
   },
   {
     "id": 43,
@@ -642,10 +515,7 @@ const dummyProducts: Product[] = [
       "name": "Roti & Pastry"
     },
     "stock": 10,
-    "priceHistory": [
-      { "id": 86, "price": 17500 },
-      { "id": 87, "price": 18000 }
-    ]
+    "currentPrice": 18000
   },
   {
     "id": 44,
@@ -657,10 +527,7 @@ const dummyProducts: Product[] = [
       "name": "Minuman Instan"
     },
     "stock": 16,
-    "priceHistory": [
-      { "id": 88, "price": 12500 },
-      { "id": 89, "price": 13000 }
-    ]
+    "currentPrice": 13000
   },
   {
     "id": 45,
@@ -672,10 +539,7 @@ const dummyProducts: Product[] = [
       "name": "Minuman Kemasan"
     },
     "stock": 9,
-    "priceHistory": [
-      { "id": 90, "price": 41000 },
-      { "id": 91, "price": 42000 }
-    ]
+    "currentPrice": 42000
   },
   {
     "id": 46,
@@ -687,10 +551,7 @@ const dummyProducts: Product[] = [
       "name": "Makanan Ringan"
     },
     "stock": 7,
-    "priceHistory": [
-      { "id": 92, "price": 24500 },
-      { "id": 93, "price": 25000 }
-    ]
+    "currentPrice": 25000
   },
   {
     "id": 47,
@@ -702,10 +563,7 @@ const dummyProducts: Product[] = [
       "name": "Minuman Kemasan"
     },
     "stock": 20,
-    "priceHistory": [
-      { "id": 94, "price": 6800 },
-      { "id": 95, "price": 7000 }
-    ]
+    "currentPrice": 7000
   },
   {
     "id": 48,
@@ -717,10 +575,7 @@ const dummyProducts: Product[] = [
       "name": "Makanan Ringan"
     },
     "stock": 28,
-    "priceHistory": [
-      { "id": 96, "price": 6800 },
-      { "id": 97, "price": 7000 }
-    ]
+    "currentPrice": 7000
   },
   {
     "id": 49,
@@ -732,10 +587,7 @@ const dummyProducts: Product[] = [
       "name": "Bumbu Dapur"
     },
     "stock": 50,
-    "priceHistory": [
-      { "id": 98, "price": 1800 },
-      { "id": 99, "price": 2000 }
-    ]
+    "currentPrice": 2000
   },
   {
     "id": 50,
@@ -747,10 +599,7 @@ const dummyProducts: Product[] = [
       "name": "Bumbu Dapur"
     },
     "stock": 50,
-    "priceHistory": [
-      { "id": 100, "price": 1800 },
-      { "id": 101, "price": 2000 }
-    ]
+    "currentPrice": 2000
   }
 ];
 
