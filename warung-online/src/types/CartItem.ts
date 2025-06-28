@@ -1,5 +1,4 @@
-
-export type CartItem = {
+type CartItem = {
   id: number,
   name: string,
   stock: number,
@@ -7,5 +6,7 @@ export type CartItem = {
   price: number,
   imageUrl: string
 };
+
+export default CartItem;
 
 

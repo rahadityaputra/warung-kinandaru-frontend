@@ -1,3 +1,5 @@
+import Category from "./Category";
+
 type Product = {
   id: number;
   name: string;
@@ -5,17 +7,9 @@ type Product = {
   imageUrl: string;
   category: Category;
   stock: number;
-  priceHistory: PriceHistory[]
+  currentPrice: number
 }
 
-interface PriceHistory {
-  id: number,
-  price: number
-}
 
-interface Category {
-  id: number,
-  name: string
-}
 
 export default Product;
