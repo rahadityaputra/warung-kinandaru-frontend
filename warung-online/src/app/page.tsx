@@ -2,13 +2,13 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { ShoppingCart } from 'lucide-react';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/Navbars/Navbar';
 import Link from 'next/link';
 import Product from '@/types/Product';
-import ProductList from '@/components/ProductList';
-import LoadingProduct from '@/components/LoadingProduct';
+import ProductList from '@/components/Lists/ProductList';
+import LoadingProduct from '@/components/Cards/LoadingProduct';
 import ErrorMessage from '@/components/ErrorMessage';
-import EmptyProductState from '@/components/EmpryProductState';
+import EmptyProductState from '@/components/Cards/EmptyProductState';
 import dynamic from 'next/dynamic';
 import { dummyProducts } from '@/data/products';
 
