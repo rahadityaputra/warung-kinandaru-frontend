@@ -29,27 +29,27 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Navigasi</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="/" className="hover:text-white transition-colors duration-200">Beranda</a></li>
-              <li><a href="/kategori" className="hover:text-white transition-colors duration-200">Kategori Produk</a></li>
-              <li><a href="/produk" className="hover:text-white transition-colors duration-200">Semua Produk</a></li>
-              <li><a href="/promo" className="hover:text-white transition-colors duration-200">Promo & Diskon</a></li>
-              <li><a href="/tentang-kami" className="hover:text-white transition-colors duration-200">Tentang Kami</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Bantuan</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="/faq" className="hover:text-white transition-colors duration-200">FAQ</a></li>
-              <li><a href="/kontak" className="hover:text-white transition-colors duration-200">Hubungi Kami</a></li>
-              <li><a href="/kebijakan-privasi" className="hover:text-white transition-colors duration-200">Kebijakan Privasi</a></li>
-              <li><a href="/syarat-ketentuan" className="hover:text-white transition-colors duration-200">Syarat & Ketentuan</a></li>
-              <li><a href="/pengembalian" className="hover:text-white transition-colors duration-200">Kebijakan Pengembalian</a></li>
-            </ul>
-          </div>
+          {/* <div> */}
+          {/*   <h3 className="text-white text-lg font-semibold mb-4">Navigasi</h3> */}
+          {/*   <ul className="space-y-2 text-sm"> */}
+          {/*     <li><a href="/" className="hover:text-white transition-colors duration-200">Beranda</a></li> */}
+          {/*     <li><a href="/kategori" className="hover:text-white transition-colors duration-200">Kategori Produk</a></li> */}
+          {/*     <li><a href="/produk" className="hover:text-white transition-colors duration-200">Semua Produk</a></li> */}
+          {/*     <li><a href="/promo" className="hover:text-white transition-colors duration-200">Promo & Diskon</a></li> */}
+          {/*     <li><a href="/tentang-kami" className="hover:text-white transition-colors duration-200">Tentang Kami</a></li> */}
+          {/*   </ul> */}
+          {/* </div> */}
+          {/**/}
+          {/* <div> */}
+          {/*   <h3 className="text-white text-lg font-semibold mb-4">Bantuan</h3> */}
+          {/*   <ul className="space-y-2 text-sm"> */}
+          {/*     <li><a href="/faq" className="hover:text-white transition-colors duration-200">FAQ</a></li> */}
+          {/*     <li><a href="/kontak" className="hover:text-white transition-colors duration-200">Hubungi Kami</a></li> */}
+          {/*     <li><a href="/kebijakan-privasi" className="hover:text-white transition-colors duration-200">Kebijakan Privasi</a></li> */}
+          {/*     <li><a href="/syarat-ketentuan" className="hover:text-white transition-colors duration-200">Syarat & Ketentuan</a></li> */}
+          {/*     <li><a href="/pengembalian" className="hover:text-white transition-colors duration-200">Kebijakan Pengembalian</a></li> */}
+          {/*   </ul> */}
+          {/* </div> */}
 
           {/* Kolom 4: Kontak & Jam Operasional */}
           <div>
