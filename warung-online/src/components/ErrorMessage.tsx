@@ -1,20 +1,19 @@
 import React from 'react';
-// Anda bisa gunakan ikon dari library seperti 'lucide-react' atau SVG kustom
-import { Ghost, LucideBotOff } from 'lucide-react'; // Import ikon yang cocok
+import { Ghost } from 'lucide-react';
 
-interface ErrorMessageProps {
+type ErrorMessageProps = {
   message: string;
-  icon?: React.ReactNode; // Opsional: bisa menerima komponen ikon langsung
+  icon?: React.ReactNode;
   showRetryButton?: boolean;
   onRetry?: () => void;
 }
 
-const ErrorMessage: React.FC<ErrorMessageProps> = ({
+const ErrorMessage = ({
   message,
   icon,
   showRetryButton = false,
   onRetry,
-}) => {
+}: ErrorMessageProps) => {
   return (
     <div className="flex flex-col items-center justify-center p-8 text-red-700 rounded-lg text-center mx-auto max-w-md my-8">
       <div className="mb-4">
@@ -23,7 +22,7 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({
             {icon}
           </div>
         ) : (
-          <Ghost className="text-red-500 w-16 h-16 mx-auto mb-2" /> // Contoh ikon default
+          <Ghost className="text-red-500 w-16 h-16 mx-auto mb-2" />
         )}
       </div>
       <h3 className="text-xl font-semibold mb-2">Oops, Ada Masalah!</h3>
