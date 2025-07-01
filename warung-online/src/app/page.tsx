@@ -84,7 +84,7 @@ export default function HomePage() {
   const shouldShowLoadMoreButton = featuredProducts.length < (search ? filteredProducts.length : products.length);
 
   return (
-    <div className="bg-gray-100 flex flex-col">
+    <div className="flex flex-col">
       <Navbar onSearch={handleSearch} placeholderOnInputSearch={"Cari Kebutuhanmu"} />
       {loading ? (
         <LoadingProduct />

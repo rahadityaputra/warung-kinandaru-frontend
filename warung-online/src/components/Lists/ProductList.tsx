@@ -56,7 +56,7 @@ function ProductList({ products, onLoadMore, showLoadMoreButton }: { products: P
 
   return (
     <>
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 p-6 min-h-screen">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-6 p-2 min-h-screen">
         {products.map((product) => (
           <ProductCard product={product} key={product.id} onOpenAddToCartModal={handleAddToCartModal} />
         ))}

@@ -11,7 +11,7 @@ type Props = {
 const ProductCard = ({ product, onOpenAddToCartModal }: Props) => {
   return (
     <div
-      className="bg-white rounded-2xl shadow-md p-0 flex flex-col items-center justify-between h-[340px] transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl"
+      className="bg-white rounded-sm shadow-sm p-0 flex flex-col items-center justify-between  transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl"
     >
 
       <div className="w-full h-40 flex-shrink-0 relative overflow-hidden">
@@ -25,12 +25,12 @@ const ProductCard = ({ product, onOpenAddToCartModal }: Props) => {
         />
       </div>
 
-      <div className="w-full px-4 py-2 flex flex-col"> {/* Ditambahkan padding vertikal (py-2) dan flex-col justify-between */}
+      <div className="w-full px-4 flex flex-col"> {/* Ditambahkan padding vertikal (py-2) dan flex-col justify-between */}
         <div> {/* Wrapper untuk nama dan harga */}
-          <h2 className="text-base font-semibold text-gray-800 mb-1 leading-snug line-clamp-2"> {/* font-semibold, leading-snug */}
+          <h2 className="text-base font-semibold text-gray-800 leading-snug line-clamp-2"> {/* font-semibold, leading-snug */}
             {product.name}
           </h2>
-          <p className="font-extrabold text-lg text-green-700 mb-2"> {/* Warna harga lebih menonjol */}
+          <p className="font-extrabold text-md text-green-700"> {/* Warna harga lebih menonjol */}
             Rp. {product.currentPrice} {/* Format harga ke IDR dengan toLocaleString */}
           </p>
         </div>
@@ -39,12 +39,11 @@ const ProductCard = ({ product, onOpenAddToCartModal }: Props) => {
         </div>
       </div>
 
-      <div className="p-2">
+      <div className="w-full">
         <button
           onClick={() => onOpenAddToCartModal(product)}
-          className="w-full bg-green-400 text-white px-7 py-1 rounded-full text-base font-medium flex items-center justify-center gap-2 hover:bg-green-700 active:bg-green-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 cursor-pointer"
+          className="w-full bg-green-400 text-white px-3 py-1 rounded-b-md text-base font-medium flex items-center justify-center gap-2 hover:bg-green-700 active:bg-green-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 cursor-pointer"
         >
-          {/* <ShoppingCartIcon size={18} /> */}
 
           + Keranjang
         </button>
